@@ -13,7 +13,7 @@ body {
     background-color: #1e3190;
 }
 
-.content {
+#content {
     height: 100%;
     width: 100%;
     max-height: calc(100% - 50px);
@@ -23,7 +23,7 @@ body {
     background-color: #31363b;
 }
 
-.board {
+#board {
     display: flex;
     overflow: hidden;
     overflow-x: auto;
@@ -57,8 +57,56 @@ body {
     font-size: 24px;
 }
 
-#toDo {
+.taskCard {
     width: 250px;
+    padding: 12px;
+    margin-top: 12px;
+    border: 1px solid #fa2759;
+    border-radius: 8px;
+}
+
+.taskCardHeader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#title {
+    font-size: 24px;
+}
+
+.taskCardDescription {
+    display: flex;
+    align-items: center;
+    margin-top: 8px;
+    padding-top: 8px;
+    border-top: 1px solid #fa2759;
+}
+
+.taskCardFooter {
+    height: 48px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-top: 8px;
+    padding-top: 8px;
+    border-top: 1px solid #fa2759;
+}
+
+.taskCardFooter img {
+    height: 48px;
+    width: 48px;
+    object-fit: cover;
+    border-radius: 100%;
+}
+
+.taskCardFooter img:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+#toDo {
+    width: 300px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -66,16 +114,25 @@ body {
 }
 
 #inProgress {
-    width: 250px;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     padding: 12px;
 }
 
 #testing {
-    width: 250px;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     padding: 12px;
 }
 
 #done {
-    width: 250px;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     padding: 12px;
 }

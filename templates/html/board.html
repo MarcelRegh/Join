@@ -5,16 +5,30 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/templates/css/header.css">
     <link rel="stylesheet" href="/templates/css/board.css">
     <link href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <script type="text/javascript" src="/templates/javaScript/header.js"></script>
+    <script src="/templates/javaScript/board.js"></script>
     <title>Document</title>
 </head>
 
-<body>
+<body onload="updateHTML()">
 
-    <div class="header"><img class="logo" src=""></div>
-    <div id="content" class="content">
-        <div class="board">
+    <div class="header"> <button class="openbtn" onclick="openNav()">☰ </button>
+        <div id="mySidebar" class="sidebar">
+            <a href="#" class="closebtn" onclick="closeNav()">×</a>
+            <a href="#">Backlog</a>
+            <a href="#">Board</a>
+            <a href="#">Impressum</a>
+            <a href="#">Help</a>
+
+        </div>
+    </div>
+
+    <div id="content">
+
+        <div id="board">
             <div>
                 <div class="stack">
                     <div class="taskHeader">
@@ -24,9 +38,11 @@
                             <img src="/assets/icons8-plus-mathe-24.png">
                         </div>
                     </div>
-                    <div id="toDo"></div>
+
+                    <div id="toDo" ondrop="drop('open')" ondragover="allowDrop(event)"></div>
                 </div>
             </div>
+
             <div>
                 <div class="stack">
                     <div class="taskHeader">
@@ -36,9 +52,10 @@
                             <img src="/assets/icons8-plus-mathe-24.png">
                         </div>
                     </div>
-                    <div id="inProgress"></div>
+                    <div id="inProgress" ondrop="drop('inProgress')" ondragover="allowDrop(event)"></div>
                 </div>
             </div>
+
             <div>
                 <div class="stack">
                     <div class="taskHeader">
@@ -48,9 +65,10 @@
                             <img src="/assets/icons8-plus-mathe-24.png">
                         </div>
                     </div>
-                    <div id="testing"></div>
+                    <div id="testing" ondrop="drop('testing')" ondragover="allowDrop(event)"></div>
                 </div>
             </div>
+
             <div>
                 <div class="stack">
                     <div class="taskHeader">
@@ -60,12 +78,12 @@
                             <img src="/assets/icons8-plus-mathe-24.png">
                         </div>
                     </div>
-                    <div id="done"></div>
+                    <div id="done" ondrop="drop('done')" ondragover="allowDrop(event)"></div>
                 </div>
             </div>
+
         </div>
     </div>
-
 </body>
 
 </html>

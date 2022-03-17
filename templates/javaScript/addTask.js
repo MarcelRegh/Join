@@ -1,5 +1,5 @@
 let i = 0;
-function addTask() {
+async function addTask() {
     let id = i++;
     let title = document.getElementById('taskTitleInput');
     let category = document.getElementById('categoryInput');
@@ -18,7 +18,9 @@ function addTask() {
     };
     tasks.push(newTask);
     clearInput();
+    await saveTasks();
     closeAddTask();
+    updateHTML();
     console.log(tasks);
 }
 
@@ -36,6 +38,11 @@ function clearInput(){
     urgency.value = ``;
     // editor.value = ``;
 }
+
+async function saveTasks() {
+    // users.push('John');
+    await backend.setItem('tasks', JSON.stringify(tasks));
+};
 
 function openAddTask() {
     document.getElementById('addTask').classList.remove('displayNone')

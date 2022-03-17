@@ -1,70 +1,17 @@
-let tasks = [
-    {
-        'id': 0,
-        'Urgancy': 'Medium',
-        'title': 'Programieren',
-        'description': 'Test ob es funktioniert open',
-        'category': 'open'
-    },
-    {
-        'id': 1,
-        'Urgancy': 'High',
-        'title': 'Programieren',
-        'description': 'Test ob es funktioniert inProgress',
-        'category': 'inProgress'
-    },
-    {
-        'id': 2,
-        'Urgancy': 'Low',
-        'title': 'Programieren',
-        'description': 'Test ob es funktioniert testing',
-        'category': 'testing'
-    },
-    {
-        'id': 3,
-        'Urgancy': 'Done',
-        'title': 'Programieren',
-        'description': 'Test ob es funktioniert done',
-        'category': 'done'
-    },
-    {
-        'id': 4,
-        'Urgancy': 'Medium',
-        'title': 'Programieren',
-        'description': 'Test ob es funktioniert open',
-        'category': 'open'
-    },
-    {
-        'id': 5,
-        'Urgancy': 'High',
-        'title': 'Programieren',
-        'description': 'Test ob es funktioniert inProgress',
-        'category': 'inProgress'
-    },
-    {
-        'id': 6,
-        'Urgancy': 'Low',
-        'title': 'Programieren',
-        'description': 'Test ob es funktioniert testing',
-        'category': 'testing'
-    },
-    {
-        'id': 7,
-        'Urgancy': 'Done',
-        'title': 'Programieren',
-        'description': 'Test ob es funktioniert done',
-        'category': 'done'
-    },
-];
-
 let dragging;
 
-function updateHTML() {
+async function updateHTML() {
+    await loadTasks();
     renderOpenTasks();
     renderTasksInProgress();
     renderTestingTasks();
     renderDoneTasks();
 }
+
+async function loadTasks() {
+    await downloadFromServer();
+    tasks = JSON.parse(backend.getItem('tasks')) || [];
+};
 
 function renderOpenTasks() {
     let open = tasks.filter(t => t['category'] == 'open');
@@ -104,7 +51,7 @@ function renderDoneTasks() {
 
 function generateTaskHTML(element) {
     return `
-    <div class="taskCard ${element['Urgancy']}" draggable="true" ondragstart="drag(${element['id']})">
+    <div id="newTask${element['id']}" class="taskCard ${element['Urgancy']}" draggable="true" ondragstart="drag(${element['id']})">
         <div class="taskCardHeader">
             <b><span id="title">${element['title']}</span></b>
         </div>
@@ -113,18 +60,25 @@ function generateTaskHTML(element) {
         </div>
         <div class="taskCardFooter ${element['Urgancy']}">
             <div class="taskCardEditors"><img src="/assets/Einhorn1.png"></div>
-            <div class="taskCardOptions"><img src="/assets/icons8-menu-24.png"></div>
+            <div class="taskCardOptions" onclick="deleteTask(${i})"><img src="/assets/icons8-müll-24.png"></div>
         </div>
     </div>
     `;
+}
+
+async function deleteTask(i) {
+    tasks['category'] = 'delete';
+    await saveTasks();
+    updateHTML();
 }
 
 function drag(id) {
     dragging = id;
 }
 
-function drop(category) {
+async function drop(category) {
     tasks[dragging]['category'] = category;
+    await saveTasks();
     updateHTML();
 }
 

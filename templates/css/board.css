@@ -81,7 +81,7 @@
     display: flex;
     align-items: center;
     margin-top: 8px;
-    padding: 8px;
+    padding: 12px 8px 12px 8px;
     border-top: 1px solid;
 }
 
@@ -90,8 +90,13 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 8px 8px 0px 8px;
+    padding: 12px 8px 0px 8px;
     border-top: 1px solid;
+}
+
+.taskCardEditors {
+    display: flex;
+    align-items: center;
 }
 
 .taskCardEditors img {
@@ -157,20 +162,20 @@
 /* Tasks div id styles End */
 /*******************************************************************************************************************/
 /* The Colors for how Important a Task is and when its done it gets a diffrent color */
-.High {
-    border-color: #fa2759;
+.high {
+    border-color: #fa2759 !important;
 }
 
-.Medium {
-    border-color: #DDCB55;
+.medium {
+    border-color: #DDCB55 !important;
 }
 
-.Low {
-    border-color: #2DFCD8;
+.low {
+    border-color: #2DFCD8 !important;
 }
 
-.Done {
-    border-color: #A0CB1C;
+.done {
+    border-color: #A0CB1C !important;
 }
 /* The Colors for how Important a Task is and when its done it gets a diffrent color End */
 /*******************************************************************************************************************/

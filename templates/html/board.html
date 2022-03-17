@@ -10,79 +10,114 @@
     <link href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
     <script type="text/javascript" src="/templates/javaScript/header.js"></script>
     <script src="/templates/javaScript/board.js"></script>
+    <script src="/templates/javaScript/addTask.js"></script>
     <title>Document</title>
 </head>
 
 <body onload="updateHTML()">
 
-    <div class="header"> <button class="openbtn" onclick="openNav()">☰ </button>
+    <div class="header"> <button class="openbtn" onclick="openNav()">☰</button>
         <div id="mySidebar" class="sidebar">
             <a href="#" class="closebtn" onclick="closeNav()">×</a>
             <a href="#">Backlog</a>
             <a href="#">Board</a>
             <a href="#">Impressum</a>
             <a href="#">Help</a>
-
         </div>
     </div>
 
     <div id="content">
-
+        <!-- Task Section -->
         <div id="board">
-            <div>
-                <div class="stack">
-                    <div class="taskHeader">
-                        <span class="taskHeaderName">To Do</span>
-                        <div>
-                            <img src="/assets/icons8-menu-24.png">
-                            <img src="/assets/icons8-plus-mathe-24.png">
-                        </div>
+            <div class="stack">
+                <div class="taskHeader">
+                    <span class="taskHeaderName">To Do</span>
+                    <div>
+                        <img src="/assets/icons8-menu-24.png">
+                        <img src="/assets/icons8-plus-mathe-24.png" onclick="openAddTask()">
                     </div>
-
-                    <div id="toDo" ondrop="drop('open')" ondragover="allowDrop(event)"></div>
                 </div>
+                <div id="toDo" ondrop="drop('open')" ondragover="allowDrop(event)"></div>
             </div>
-
-            <div>
-                <div class="stack">
-                    <div class="taskHeader">
-                        <span class="taskHeaderName">In Progress</span>
-                        <div>
-                            <img src="/assets/icons8-menu-24.png">
-                            <img src="/assets/icons8-plus-mathe-24.png">
-                        </div>
+            <div class="stack">
+                <div class="taskHeader">
+                    <span class="taskHeaderName">In Progress</span>
+                    <div>
+                        <img src="/assets/icons8-menu-24.png">
+                        <img src="/assets/icons8-plus-mathe-24.png" onclick="openAddTask()">
                     </div>
-                    <div id="inProgress" ondrop="drop('inProgress')" ondragover="allowDrop(event)"></div>
                 </div>
+                <div id="inProgress" ondrop="drop('inProgress')" ondragover="allowDrop(event)"></div>
             </div>
-
-            <div>
-                <div class="stack">
-                    <div class="taskHeader">
-                        <span class="taskHeaderName">Testing</span>
-                        <div>
-                            <img src="/assets/icons8-menu-24.png">
-                            <img src="/assets/icons8-plus-mathe-24.png">
-                        </div>
+            <div class="stack">
+                <div class="taskHeader">
+                    <span class="taskHeaderName">Testing</span>
+                    <div>
+                        <img src="/assets/icons8-menu-24.png">
+                        <img src="/assets/icons8-plus-mathe-24.png" onclick="openAddTask()">
                     </div>
-                    <div id="testing" ondrop="drop('testing')" ondragover="allowDrop(event)"></div>
                 </div>
+                <div id="testing" ondrop="drop('testing')" ondragover="allowDrop(event)"></div>
             </div>
-
-            <div>
-                <div class="stack">
-                    <div class="taskHeader">
-                        <span class="taskHeaderName">Done</span>
-                        <div>
-                            <img src="/assets/icons8-menu-24.png">
-                            <img src="/assets/icons8-plus-mathe-24.png">
-                        </div>
+            <div class="stack">
+                <div class="taskHeader">
+                    <span class="taskHeaderName">Done</span>
+                    <div>
+                        <img src="/assets/icons8-menu-24.png">
+                        <img src="/assets/icons8-plus-mathe-24.png" onclick="openAddTask()">
                     </div>
-                    <div id="done" ondrop="drop('done')" ondragover="allowDrop(event)"></div>
                 </div>
+                <div id="done" ondrop="drop('done')" ondragover="allowDrop(event)"></div>
             </div>
-
         </div>
+        <!-- Task Section End -->
+        <!------------------------------------------------------------------------------------------->
+        <!-- Add Task Section -->
+        <div id="addTask" class="displayNone">
+            <div class="addTaskInput">
+                <label><h2>Title</h2></label>
+                <input class="padding8px" type="text" id="taskTitleInput">
+
+                <label><h2>Category</h2></label>
+                <select class="padding8px" name="Category" id="categoryInput">
+                    <option value=""></option>
+                    <option value="management">Management</option>
+                    <option value="marketing">Marketing</option>
+                    <option value="iT">IT</option>
+                    <option value="production">Production</option>
+                    <option value="finance">Finance</option>
+                </select>
+
+                <label><h2>Description</h2></label>
+                <textarea name="" id="descriptionInput" cols="30" rows="7"></textarea>
+            </div>
+            <div class="addTaskInput">
+                <label><h2>Due Date</h2></label>
+                <input class="padding8px" type="date" id="dateInput">
+
+                <label><h2>Urgency</h2></label>
+                <select class="padding8px" name="Urgency" id="urgencyInput" required>
+                    <option value=""></option>
+                    <option value="high">High</option>
+                    <option value="medium">Medium</option>
+                    <option value="Low">Low</option>
+                </select>
+
+                <label><h2>Assigned To</h2></label>
+                <div class="addTaskEditors">
+                    <div class="addTaskEditor">
+                        <img id="editorInput" src="/assets/Einhorn1.png" style="height: 64px; width: 64px; object-fit: cover; border-radius: 100%;">
+                        <img src="/assets/icon plus.png" style="height: 40px; width: 40px; object-fit: cover;">
+                    </div>
+                    <div class="addTaskButtons">
+                        <button class="button" onclick="closeAddTask()">Chancel</button>
+                        <button class="button" onclick="addTask()">Create Task</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Add Task Section End -->
+        <!------------------------------------------------------------------------------------------->
     </div>
 </body>
 

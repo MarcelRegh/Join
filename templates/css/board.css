@@ -1,6 +1,4 @@
-::-webkit-scrollbar {
-    display: none;
-}
+
 /* font-family: 'PT Sans', sans-serif; */
 /* Just the content div some css */
 #content {
@@ -18,7 +16,6 @@
 #board {
     display: flex;
     overflow: hidden;
-    overflow-x: auto;
     padding-left: 16px;
 }
 
@@ -55,6 +52,7 @@
     width: 250px;
     padding: 12px;
     margin-top: 12px;
+    margin-bottom: 12px;
     border: 1px solid;
     border-radius: 8px;
     font-family: sans-serif;
@@ -121,12 +119,13 @@
 /*******************************************************************************************************************/
 /* Tasks div id styles */
 #toDo {
-    height: 100vh;
+    height: calc(100% - 150px);
     width: 300px;
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 12px;
+    overflow-x: hidden;
     overflow-y: auto;
 }
 
@@ -257,4 +256,24 @@ textarea {
 button:hover {
     cursor: pointer;
     background-color: #fa2759;
+}
+
+
+
+
+
+::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #1E3190;
+    border-radius: 25%;
+    border: 2px solid transparent;
+    background-clip: content-box;
+}
+
+::-webkit-scrollbar-track-piece {
+    background-color: transparent;
 }

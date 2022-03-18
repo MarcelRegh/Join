@@ -34,8 +34,8 @@
                 <div class="taskHeader">
                     <span class="taskHeaderName">To Do</span>
                     <div>
-                        <img src="/assets/icons8-menu-24.png">
-                        <img src="/assets/icons8-plus-mathe-24.png" onclick="openAddTask()">
+                        <img src="/assets/icons8-müll-24.png" onclick="deleteAllTasks('open')">
+                        <img src="/assets/icons8-plus-mathe-24.png" onclick="openAddTask('open')">
                     </div>
                 </div>
                 <div id="toDo" ondrop="drop('open')" ondragover="allowDrop(event)"></div>
@@ -44,8 +44,8 @@
                 <div class="taskHeader">
                     <span class="taskHeaderName">In Progress</span>
                     <div>
-                        <img src="/assets/icons8-menu-24.png">
-                        <img src="/assets/icons8-plus-mathe-24.png" onclick="openAddTask()">
+                        <img src="/assets/icons8-müll-24.png" onclick="deleteAllTasks('inProgress')">
+                        <img src="/assets/icons8-plus-mathe-24.png" onclick="openAddTask('inProgress')">
                     </div>
                 </div>
                 <div id="inProgress" ondrop="drop('inProgress')" ondragover="allowDrop(event)"></div>
@@ -54,8 +54,8 @@
                 <div class="taskHeader">
                     <span class="taskHeaderName">Testing</span>
                     <div>
-                        <img src="/assets/icons8-menu-24.png">
-                        <img src="/assets/icons8-plus-mathe-24.png" onclick="openAddTask()">
+                        <img src="/assets/icons8-müll-24.png" onclick="deleteAllTasks('testing')">
+                        <img src="/assets/icons8-plus-mathe-24.png" onclick="openAddTask('testing')">
                     </div>
                 </div>
                 <div id="testing" ondrop="drop('testing')" ondragover="allowDrop(event)"></div>
@@ -64,8 +64,8 @@
                 <div class="taskHeader">
                     <span class="taskHeaderName">Done</span>
                     <div>
-                        <img src="/assets/icons8-menu-24.png">
-                        <img src="/assets/icons8-plus-mathe-24.png" onclick="openAddTask()">
+                        <img src="/assets/icons8-müll-24.png" onclick="deleteAllTasks('done')">
+                        <img src="/assets/icons8-plus-mathe-24.png" onclick="openAddTask('done')">
                     </div>
                 </div>
                 <div id="done" ondrop="drop('done')" ondragover="allowDrop(event)"></div>

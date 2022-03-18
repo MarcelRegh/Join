@@ -12,19 +12,15 @@
     <script src="/templates/javaScript/mini_backend.js"></script>
     <script src="/templates/javaScript/board.js"></script>
     <script src="/templates/javaScript/addTask.js"></script>
+    <script src="/templates/javaScript/include.js"></script>
     <title>Document</title>
 </head>
 
-<body onload="updateHTML()">
+<body onload="updateHTML(), includeHTML()">
 
-    <div class="header"> <button class="openbtn" onclick="openNav()">☰</button>
-        <div id="mySidebar" class="sidebar">
-            <a href="#" class="closebtn" onclick="closeNav()">×</a>
-            <a href="#">Backlog</a>
-            <a href="#">Board</a>
-            <a href="#">Impressum</a>
-            <a href="#">Help</a>
-        </div>
+    <div w3-include-html="header.html" class="header">
+
+
     </div>
 
     <div id="content">
@@ -121,6 +117,10 @@
         <!-- Add Task Section End -->
         <!------------------------------------------------------------------------------------------->
     </div>
+
+    <!-- impressum -->
+
+
 </body>
 
 </html>

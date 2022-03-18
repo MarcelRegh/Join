@@ -1,8 +1,5 @@
 /* font-family: 'PT Sans', sans-serif; */
-
-
 /* Just the content div some css */
-
 #content {
     height: 100%;
     width: 100%;
@@ -13,16 +10,9 @@
     background-color: #31363b;
     color: white;
 }
-
-
 /* Just the content div some css End */
-
-
 /*******************************************************************************************************************/
-
-
 /* The hole board section */
-
 #board {
     display: flex;
     overflow: hidden;
@@ -55,16 +45,9 @@
     font-family: 'PT Sans';
     font-size: 24px;
 }
-
-
 /* The hole board section End*/
-
-
 /*******************************************************************************************************************/
-
-
 /* Single task card CSS */
-
 .taskCard {
     width: 250px;
     padding: 12px;
@@ -132,16 +115,9 @@
     transform: scale(1.1);
     transition: ease-in-out;
 }
-
-
 /* Single task card CSS End */
-
-
 /*******************************************************************************************************************/
-
-
 /* Tasks div id styles */
-
 #toDo {
     height: calc(100% - 150px);
     width: 300px;
@@ -154,7 +130,7 @@
 }
 
 #inProgress {
-    height: 100vh;
+    height: calc(100% - 150px);
     width: 300px;
     display: flex;
     flex-direction: column;
@@ -164,7 +140,7 @@
 }
 
 #testing {
-    height: 100vh;
+    height: calc(100% - 150px);
     width: 300px;
     display: flex;
     flex-direction: column;
@@ -174,7 +150,7 @@
 }
 
 #done {
-    height: 100vh;
+    height: calc(100% - 150px);
     width: 300px;
     display: flex;
     flex-direction: column;
@@ -182,16 +158,9 @@
     padding: 12px;
     overflow-y: auto;
 }
-
-
 /* Tasks div id styles End */
-
-
 /*******************************************************************************************************************/
-
-
 /* The Colors for how Important a Task is and when its done it gets a diffrent color */
-
 .high {
     border-color: #fa2759 !important;
 }
@@ -207,13 +176,8 @@
 .done {
     border-color: #A0CB1C !important;
 }
-
-
 /* The Colors for how Important a Task is and when its done it gets a diffrent color End */
-
-
 /*******************************************************************************************************************/
-
 .displayNone {
     display: none !important;
 }

@@ -2,7 +2,7 @@ body {
     height: 100vh;
     width: 100vw;
     margin: 0;
-    overflow: hidden;
+    /* overflow: hidden; */
     color: #edeeef;
 }
 
@@ -22,26 +22,32 @@ body {
     background-color: #1e3190;
     overflow-x: hidden;
     padding-top: 60px;
+    transition: all 0.4s ease-in-out;
 }
 
 .sidebar a {
-    padding: 8px 8px 8px 32px;
+    padding: 8px 8px 8px 82px;
     text-decoration: none;
     font-size: 25px;
-    color: #818181;
+    color: white;
     display: block;
 }
 
+.img-class {
+    padding: 8px 8px 8px 82px;
+}
+
 .sidebar a:hover {
-    color: #f1f1f1;
+    background-color: #31363b;
 }
 
 .sidebar .closebtn {
     position: absolute;
     top: 0;
-    right: 25px;
+    left: -55px;
+    /* right: 25px; */
     font-size: 36px;
-    margin-left: 50px;
+    /* margin-left: 50px; */
 }
 
 .openbtn {
@@ -55,4 +61,45 @@ body {
 
 .openbtn:hover {
     background-color: #444;
-} 
+}
+
+.test {
+    margin-top: 40px;
+}
+
+.mr-top {
+    margin-top: 150px;
+}
+
+.main-container {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 20px;
+    padding-right: 20px;
+    align-items: end;
+}
+
+.user-logo img {
+    width: 40px;
+    border-radius: 50%;
+}
+
+.user-logo img:hover {
+    cursor: pointer;
+}
+
+
+/* ---------------------Imprrint-------------------*/
+
+.container {
+    padding-right: 10%;
+    padding-left: 10%;
+    background-color: #31363b99;
+    height: 100%;
+    overflow: hidden;
+    color: white;
+}
+
+a {
+    color: #1e3190;
+}

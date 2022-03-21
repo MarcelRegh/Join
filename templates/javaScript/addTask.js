@@ -1,6 +1,6 @@
-let i = 0;
+let state;
+
 async function addTask() {
-    let id = i++;
     let title = document.getElementById('taskTitleInput');
     let category = document.getElementById('categoryInput');
     let description = document.getElementById('descriptionInput');
@@ -8,12 +8,13 @@ async function addTask() {
     let urgency = document.getElementById('urgencyInput');
     // let editor = document.getElementById('editorInput');
     let newTask = {
-        'id': id,
+        'id': new Date().getTime(),
         'title': title.value,
         'description': description.value,
         'category': category.value,
         'Urgancy': urgency.value,
         'date': date.value,
+        'status': state,
         // 'editor': editor.value
     };
     tasks.push(newTask);
@@ -25,17 +26,17 @@ async function addTask() {
 }
 
 function clearInput(){
-    let title = document.getElementById('taskTitleInput');
-    let category = document.getElementById('categoryInput');
-    let description = document.getElementById('descriptionInput');
-    let date = document.getElementById('dateInput');
-    let urgency = document.getElementById('urgencyInput');
+    document.getElementById('taskTitleInput').value = ``;;
+    document.getElementById('categoryInput').value = ``;;
+    document.getElementById('descriptionInput').value = ``;;
+    document.getElementById('dateInput').value = ``;;
+    document.getElementById('urgencyInput').value = ``;;
     // let editor = document.getElementById('editorInput');
-    title.value = ``;
-    category.value = ``;
-    description.value = ``;
-    date.value = ``;
-    urgency.value = ``;
+    // title.value = ``;
+    // category.value = ``;
+    // description.value = ``;
+    // date.value = ``;
+    // urgency.value = ``;
     // editor.value = ``;
 }
 
@@ -44,10 +45,12 @@ async function saveTasks() {
     await backend.setItem('tasks', JSON.stringify(tasks));
 };
 
-function openAddTask() {
+function openAddTask(param) {
+    state = param;
     document.getElementById('addTask').classList.remove('displayNone')
 }
 
 function closeAddTask() {
     document.getElementById('addTask').classList.add('displayNone')
+    state = ``; 
 }

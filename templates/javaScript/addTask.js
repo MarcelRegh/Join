@@ -25,7 +25,8 @@ async function addTask() {
     console.log(tasks);
 }
 
-function clearInput(){
+
+function clearInput() {
     document.getElementById('taskTitleInput').value = ``;;
     document.getElementById('categoryInput').value = ``;;
     document.getElementById('descriptionInput').value = ``;;
@@ -52,5 +53,5 @@ function openAddTask(param) {
 
 function closeAddTask() {
     document.getElementById('addTask').classList.add('displayNone')
-    state = ``; 
+    state = ``;
 }

@@ -6,12 +6,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/templates/css/login.css">
+    <script src="/templates/javaScript/login.js"></script>
     <title>Join</title>
 </head>
 
 <body>
-    <div class="container">
-        <form class="form form_hidden" id="login">
+    <divv class="container">
+        <form class="form" id="login">
             <h1 class="form_title">Login</h1>
             <div class="form_message form_massage_error"></div>
 
@@ -26,22 +27,18 @@
 
             <button class="form_button" type="submit">Continue</button>
 
-            <p class="form_text">
-                <a href="#" class="form_link">Forgot your password? </a>
-            </p>
+
 
             <p class="form_text">
                 <a class="form_link" href="./" id="link_create_account">Don't have an account? Create account. </a>
             </p>
         </form>
-
-
-        <form class="form" id="create_account">
+        <form class="form form_hidden" id="create_account">
             <h1 class="form_title">Crerate Account</h1>
             <div class="form_message form_massage_error"></div>
 
             <div class="form_input_group">
-                <input type="text" class="form_input" autofocus placeholder="Username">
+                <input type="text" id="signup_username" class="form_input" autofocus placeholder="Username">
                 <div class="form_input_error_message"></div>
             </div>
             <div class="form_input_group">
@@ -53,7 +50,7 @@
                 <div class="form_input_error_message"></div>
             </div>
             <div class="form_input_group">
-                <input type="text" class="form_input" autofocus placeholder="Confirm Password">
+                <input type="password" class="form_input" autofocus placeholder="Confirm Password">
                 <div class="form_input_error_message"></div>
             </div>
 
@@ -63,10 +60,7 @@
                 <a class="form_link" href="./" id="link_login">Already have an account? Sign in. </a>
             </p>
         </form>
-    </div>
-
-
-
+        </div>
 </body>
 
 </html>

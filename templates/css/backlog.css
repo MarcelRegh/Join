@@ -106,3 +106,7 @@ h1 span:nth-child(8) {
         filter: blur(0px);
     }
 }
+
+.delete {
+    cursor: pointer;
+}

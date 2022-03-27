@@ -31,13 +31,6 @@ function clearInput(){
     document.getElementById('descriptionInput').value = ``;;
     document.getElementById('dateInput').value = ``;;
     document.getElementById('urgencyInput').value = ``;;
-    // let editor = document.getElementById('editorInput');
-    // title.value = ``;
-    // category.value = ``;
-    // description.value = ``;
-    // date.value = ``;
-    // urgency.value = ``;
-    // editor.value = ``;
 }
 
 async function saveTasks() {

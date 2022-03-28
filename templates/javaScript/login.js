@@ -27,8 +27,8 @@ function clearInputError(inputElement) {
  * 
  */
 document.addEventListener("DOMContentLoaded", () => {  // The DOMContentLoaded event is dispatched when the initial HTML document is fully loaded and parsed.
-    const loginForm = document.querySelector("#login");  // Constant variable "loginForm" is initialized
-    const createAccountForm = document.querySelector("#create_account");  // Constant variable "createAccountForm" is initialized
+    const loginForm = document.querySelector("#login");  // Constant variable "loginForm" is initialized.
+    const createAccountForm = document.querySelector("#create_account");  // Constant variable "createAccountForm" is initialized.
 
     /**
      * Clicking link_create_account takes you to the registration page.
@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", () => {  // The DOMContentLoaded e
     document.querySelector("#link_create_account").addEventListener("click",  e => {
         e.preventDefault();
         loginForm.classList.add("form_hidden"); // login page is hidden.
-        createAccountForm.classList.remove("form_hidden");  // Registration page becomes visible
+        createAccountForm.classList.remove("form_hidden");  // Registration page becomes visible.
     });
 
     /**
@@ -67,3 +67,24 @@ document.addEventListener("DOMContentLoaded", () => {  // The DOMContentLoaded e
         });
     });
 }); 
+
+// Section to save the users.
+
+async function addUser() {
+    let username = document.getElementById('signup_username');
+    let email = document.getElementById('signup_email');
+    let password = document.getElementById('signup_password');
+    let confirm_password = document.getElementById('signup_confirm_password');
+
+    if (password  == confirm_password) {
+        let newUser = {
+        'id': new Date().getTime(),
+        'username': username.value,
+        'e-mail_address': email.value,
+        'password': password.value,
+        }
+    }
+    else {
+        alert('"Password" and "Confirm Password" does not match');
+    }
+}

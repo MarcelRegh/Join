@@ -7,12 +7,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="/templates/javaScript/include.js"></script>
     <script type="text/javascript" src="/templates/javaScript/header.js"></script>
+    <script type="text/javascript" src="/templates/javaScript/backlog.js"></script>
+    <script src="/templates/javaScript/mini_backend.js"></script>
     <link rel="stylesheet" href="/templates/css/header.css">
+    <link rel="stylesheet" href="/templates/css/backlog.css">
     <title>Document</title>
 </head>
 
-<body onload="includeHTML()">
+<body onload="includeHTML(), init()">
     <div w3-include-html="header.html" class="header">
+
+    </div>
+    <div class="backlog-container">
+        <div class="caption">
+            <h1>
+                <span>B</span>
+                <span>a</span>
+                <span>c</span>
+                <span>k</span>
+                <span>l</span>
+                <span>o</span>
+                <span>g</span>
+            </h1>
+        </div>
+
+        <div class="caption2">
+            <h3>Assigned</h3>
+            <h3>Title</h3>
+            <h3>Category</h3>
+            <h3>Description</h3>
+            <h3>Date</h3>
+            <h3>Urgency</h3>
+        </div>
+        <div class="backlog" id="backlog">
+
+
+        </div>
+
 
     </div>
 

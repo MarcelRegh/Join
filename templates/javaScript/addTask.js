@@ -25,19 +25,13 @@ async function addTask() {
     console.log(tasks);
 }
 
-function clearInput(){
+
+function clearInput() {
     document.getElementById('taskTitleInput').value = ``;;
     document.getElementById('categoryInput').value = ``;;
     document.getElementById('descriptionInput').value = ``;;
     document.getElementById('dateInput').value = ``;;
     document.getElementById('urgencyInput').value = ``;;
-    // let editor = document.getElementById('editorInput');
-    // title.value = ``;
-    // category.value = ``;
-    // description.value = ``;
-    // date.value = ``;
-    // urgency.value = ``;
-    // editor.value = ``;
 }
 
 async function saveTasks() {
@@ -52,5 +46,5 @@ function openAddTask(param) {
 
 function closeAddTask() {
     document.getElementById('addTask').classList.add('displayNone')
-    state = ``; 
+    state = ``;
 }

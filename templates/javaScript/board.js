@@ -67,7 +67,9 @@ function generateTaskHTML(element) {
 }
 
 async function deleteTask(ID) {
-    tasks[ID]['status'] = 'delete';
+    console.log(ID);
+    let task = tasks.find(t => t['id']);
+    task['status'] = 'delete'
     await saveTasks();
     updateHTML();
 }

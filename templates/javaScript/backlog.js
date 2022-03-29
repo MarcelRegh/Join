@@ -28,7 +28,6 @@ function generateHTMLComponents() {
     <p class="width17">${task['description']}</p>
     <p class="width17">${task['date']}</p>
     <p class="width17">${task['Urgancy']}</p>
-    <p class="width17 delete"  onclick="deleteTask()">Delete</p>
     </div>`
     };
 };

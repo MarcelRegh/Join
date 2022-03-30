@@ -48,6 +48,7 @@ function clearInputError(inputElement) {
     inputElement.parentElement.querySelector(".form_input_error_message").textContent = "";
 }
 
+<<<<<<< HEAD
 
 document.addEventListener("DOMContentLoaded", () => {  // The DOMContentLoaded event is dispatched when the initial HTML document is fully loaded and parsed.
     const loginForm = document.querySelector("#login");  // Constant variable "loginForm" is initialized.
@@ -58,6 +59,22 @@ document.addEventListener("DOMContentLoaded", () => {  // The DOMContentLoaded e
         e.preventDefault();
         loginForm.classList.add("form_hidden"); // login page is hidden.
         createAccountForm.classList.remove("form_hidden");  // Registration page becomes visible.
+=======
+/**
+ * 
+ */
+document.addEventListener("DOMContentLoaded", () => { // The DOMContentLoaded event is dispatched when the initial HTML document is fully loaded and parsed.
+    const loginForm = document.querySelector("#login"); // Constant variable "loginForm" is initialized
+    const createAccountForm = document.querySelector("#create_account"); // Constant variable "createAccountForm" is initialized
+
+    /**
+     * Clicking link_create_account takes you to the registration page.
+     */
+    document.querySelector("#link_create_account").addEventListener("click", e => {
+        e.preventDefault();
+        loginForm.classList.add("form_hidden"); // login page is hidden.
+        createAccountForm.classList.remove("form_hidden"); // Registration page becomes visible
+>>>>>>> 4536f0a684576fca151edd81615f0a53ba8942d5
     });
 
     //Clicking link_login takes you to the login page.

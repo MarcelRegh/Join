@@ -63,7 +63,7 @@ body {
     object-fit: cover;
 }
 
-.help-text {
+.help-description {
     margin-bottom: 60px;
     font-size: 20px;
 }
@@ -75,5 +75,8 @@ li {
 @media (max-width:960px) {
     .help-img-container {
         width: 100%;
+    }
+    .help-container h1 {
+        font-size: 25px;
     }
 }

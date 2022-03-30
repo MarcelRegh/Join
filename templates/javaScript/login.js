@@ -17,13 +17,11 @@ function checkUser() {
     let username = username_login.value
     let password = password_login.value;
 
-    if ((username == user1.username && password == user1.password) || 
-    (username == user2.username && password == user2.password) || 
-    (username == user3.username && password == user3.password)) 
-    {
+    if ((username == user1.username && password == user1.password) ||
+        (username == user2.username && password == user2.password) ||
+        (username == user3.username && password == user3.password)) {
         window.location.href = "/templates/html/board.html";
-    }
-    else {
+    } else {
         alert('Username or password is incorrect');
     }
 }
@@ -48,18 +46,6 @@ function clearInputError(inputElement) {
     inputElement.parentElement.querySelector(".form_input_error_message").textContent = "";
 }
 
-<<<<<<< HEAD
-
-document.addEventListener("DOMContentLoaded", () => {  // The DOMContentLoaded event is dispatched when the initial HTML document is fully loaded and parsed.
-    const loginForm = document.querySelector("#login");  // Constant variable "loginForm" is initialized.
-    const createAccountForm = document.querySelector("#create_account");  // Constant variable "createAccountForm" is initialized.
-
-    // Clicking link_create_account takes you to the registration page.
-    document.querySelector("#link_create_account").addEventListener("click", e => {
-        e.preventDefault();
-        loginForm.classList.add("form_hidden"); // login page is hidden.
-        createAccountForm.classList.remove("form_hidden");  // Registration page becomes visible.
-=======
 /**
  * 
  */
@@ -74,7 +60,6 @@ document.addEventListener("DOMContentLoaded", () => { // The DOMContentLoaded ev
         e.preventDefault();
         loginForm.classList.add("form_hidden"); // login page is hidden.
         createAccountForm.classList.remove("form_hidden"); // Registration page becomes visible
->>>>>>> 4536f0a684576fca151edd81615f0a53ba8942d5
     });
 
     //Clicking link_login takes you to the login page.
@@ -97,7 +82,7 @@ document.addEventListener("DOMContentLoaded", () => { // The DOMContentLoaded ev
             clearInputError(inputElement);
         });
     });
-}); 
+});
 
 // Section to save the users.
 
@@ -114,19 +99,18 @@ async function addUser() {
     let password = document.getElementById('signup_password');
     let confirm_password = document.getElementById('signup_confirm_password');
 
-    if (password.value  == confirm_password.value) {
+    if (password.value == confirm_password.value) {
         let newUser = {
-        'id': new Date().getTime(),
-        'username': username.value,
-        'e-mail_address': email.value,
-        'password': password.value,
+            'id': new Date().getTime(),
+            'username': username.value,
+            'e-mail_address': email.value,
+            'password': password.value,
         };
-        
+
         username.push(newUser);
         clearuserInput();
         await saveUser();
-    }
-    else {
+    } else {
         alert('"Password" and "Confirm Password" does not match.');
     }
 
@@ -142,4 +126,3 @@ function clearuserInput() {
 async function saveUser() {
     await backend.setItem('user', JSON.stringify(user));
 };
-*/

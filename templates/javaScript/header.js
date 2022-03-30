@@ -8,18 +8,18 @@ function closeNav() {
     // document.getElementById("content").style.marginLeft = "0px";
 }
 
-let profileBoxPart = false;
+// let profileBoxPart = false;
 
-function changeImg() {
-    let profileBox = document.getElementById('profileBox');
+// function changeImg() {
+//     let profileBox = document.getElementById('profileBox');
 
-    if (profileBoxPart) {
-        profileBox.classList.add('d-none');
-        profileBoxPart = false;
-    } else {
-        profileBox.classList.remove('d-none');
-        profileBoxPart = true;
-    }
+//     if (profileBoxPart) {
+//         profileBox.classList.add('d-none');
+//         profileBoxPart = false;
+//     } else {
+//         profileBox.classList.remove('d-none');
+//         profileBoxPart = true;
+//     }
 
 
-}
+// }

@@ -24,15 +24,15 @@ function generateHTMLComponents() {
     <p class="width17">${task['description']}</p>
     <p class="width17">${task['date']}</p>
     <p class="width17">${task['Urgancy']}</p>
-    <p onclick="deleteTask()">delete</P>
+  
     </div>`
     };
 };
 
-function deleteTask(i) {
-    tasks = JSON.parse(backend.getItem('tasks'));
-    tasks.splice(i, 1);
-    backend.setItem('tasks', JSON.stringify(tasks));
-    init();
+// function deleteTask(i) {
+//     tasks = JSON.parse(backend.getItem('tasks'));
+//     tasks.splice(i, 1);
+//     backend.setItem('tasks', JSON.stringify(tasks));
+//     init();
 
-}
+// }

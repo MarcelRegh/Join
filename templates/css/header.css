@@ -159,4 +159,7 @@ a {
         overflow-x: hidden;
         overflow-y: scroll;
     }
+    a {
+        padding-bottom: 50px;
+    }
 }

@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/templates/css/login.css">
     <script src="/templates/javaScript/login.js"></script>
+    <script src="/templates/javaScript/mini_backend.js"></script>
     <title>Join</title>
 </head>
 
@@ -17,31 +18,26 @@
             <div class="form_message form_massage_error"></div>
 
             <div class="form_input_group">
-                <input type="text" class="form_input" autofocus placeholder="Username or email">
+                <input id="username_login" type="text" class="form_input" autofocus placeholder="Username or email">
                 <div class="form_input_error_message"></div>
             </div>
             <div class="form_input_group">
-                <input type="password" class="form_input" autofocus placeholder="password">
+                <input id="password_login" type="password" class="form_input" autofocus placeholder="password">
                 <div class="form_input_error_message"></div>
             </div>
 
-            <button class="form_button" type="submit">Continue</button>
+            <button class="form_button" onclick="checkUser()" type="button">Continue</button>
 
 
 
             <p class="form_text">
-                <a class="form_link" href="./" id="link_create_account">Don't have an account? Create account. </a>
+                <a class = "form_link" href="/templates/html/board.html">Use as a guest.</a>
             </p>
         </form>
-<<<<<<< HEAD
 
 
-        <form class="form form_hidden" id="create_account">
+        <!--<form class="form form_hidden" id="create_account">
             <h1 class="form_title">Create Account</h1>
-=======
-        <form class="form form_hidden" id="create_account">
-            <h1 class="form_title">Crerate Account</h1>
->>>>>>> a522f5e101bf8126cec1a6b577377c373c31714c
             <div class="form_message form_massage_error"></div>
 
             <div class="form_input_group">
@@ -61,13 +57,13 @@
                 <div class="form_input_error_message"></div>
             </div>
 
-            <button class="form_button" type="submit">Continue</button>
+            <button onclick="addUser()" class="form_button" type="submit">Continue</button>
 
             <p class="form_text">
                 <a class="form_link" href="./" id="link_login">Already have an account? Sign in. </a>
             </p>
         </form>
         </div>
+           -->
 </body>
-
 </html>

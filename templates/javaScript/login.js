@@ -17,13 +17,11 @@ function checkUser() {
     let username = username_login.value
     let password = password_login.value;
 
-    if ((username == user1.username && password == user1.password) || 
-    (username == user2.username && password == user2.password) || 
-    (username == user3.username && password == user3.password)) 
-    {
+    if ((username == user1.username && password == user1.password) ||
+        (username == user2.username && password == user2.password) ||
+        (username == user3.username && password == user3.password)) {
         window.location.href = "/templates/html/board.html";
-    }
-    else {
+    } else {
         alert('Username or password is incorrect');
     }
 }
@@ -80,7 +78,7 @@ document.addEventListener("DOMContentLoaded", () => {  // The DOMContentLoaded e
             clearInputError(inputElement);
         });
     });
-}); 
+});
 
 // Section to save the users.
 
@@ -97,19 +95,18 @@ async function addUser() {
     let password = document.getElementById('signup_password');
     let confirm_password = document.getElementById('signup_confirm_password');
 
-    if (password.value  == confirm_password.value) {
+    if (password.value == confirm_password.value) {
         let newUser = {
-        'id': new Date().getTime(),
-        'username': username.value,
-        'e-mail_address': email.value,
-        'password': password.value,
+            'id': new Date().getTime(),
+            'username': username.value,
+            'e-mail_address': email.value,
+            'password': password.value,
         };
-        
+
         username.push(newUser);
         clearuserInput();
         await saveUser();
-    }
-    else {
+    } else {
         alert('"Password" and "Confirm Password" does not match.');
     }
 
